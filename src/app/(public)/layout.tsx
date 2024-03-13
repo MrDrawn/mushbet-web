@@ -6,6 +6,8 @@ import '../globals.css';
 
 import { Footer } from '@src/components';
 
+import { ToastContainer } from 'react-toastify';
+
 import { MainLayout } from '../layouts';
 
 const raleway = Raleway({ subsets: ['latin'] });
@@ -18,8 +20,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Casa de aposta online | AlphaBet',
-  description: 'A maior casa de aposta da america latina.',
+  title: 'Casa de aposta online | MushBet',
+  description: 'A maior casa de aposta da américa latina.',
 };
 
 export default function RootLayout({
@@ -47,6 +49,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${raleway.className} bg-dark-300 h-full relative`}>
+        <ToastContainer />
         <MainLayout>{children}</MainLayout>
         <div className="lg:ml-[220px]">
           <Footer />
