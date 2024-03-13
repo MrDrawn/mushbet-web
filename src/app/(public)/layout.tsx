@@ -6,9 +6,10 @@ import '../globals.css';
 
 import { Footer } from '@src/components';
 
-import { ToastContainer } from 'react-toastify';
+import { Toaster } from 'react-hot-toast';
 
 import { MainLayout } from '../layouts';
+import { AuthProvider } from '@src/contexts';
 
 const raleway = Raleway({ subsets: ['latin'] });
 
@@ -49,11 +50,21 @@ export default function RootLayout({
         />
       </head>
       <body className={`${raleway.className} bg-dark-300 h-full relative`}>
-        <ToastContainer />
-        <MainLayout>{children}</MainLayout>
-        <div className="lg:ml-[220px]">
-          <Footer />
-        </div>
+        <AuthProvider>
+          <Toaster
+            position="top-right"
+            toastOptions={{
+              style: {
+                background: '#000',
+                color: '#fff',
+              },
+            }}
+          />
+          <MainLayout>{children}</MainLayout>
+          <div className="lg:ml-[220px]">
+            <Footer />
+          </div>
+        </AuthProvider>
       </body>
     </html>
   );

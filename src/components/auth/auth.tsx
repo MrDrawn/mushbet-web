@@ -84,7 +84,11 @@ export function Auth({
                 Cadastre-se
               </button>
             </div>
-            {selectedTab === 'login' ? <LoginForm /> : <RegisterForm />}
+            {selectedTab === 'login' ? (
+              <LoginForm />
+            ) : (
+              <RegisterForm setSelectedTab={setSelectedTab} />
+            )}
           </div>
         </motion.div>
       </div>

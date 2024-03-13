@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    API_URL: 'https://api.alpha7.bet',
+    API_URL: 'https://api.moonkode.com.br',
   },
   images: {
     remotePatterns: [
