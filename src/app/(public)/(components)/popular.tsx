@@ -26,7 +26,7 @@ export function Popular() {
           />
         </Link>
         <Link
-          href="/casino/pg-soft/fortune-rabbit"
+          href="/casino/pg-soft/fortune-tiger"
           className="relative flex justify-center group"
         >
           <Image

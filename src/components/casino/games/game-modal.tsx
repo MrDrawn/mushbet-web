@@ -7,6 +7,8 @@ import { PiPlayBold, PiStarDuotone, PiXBold } from 'react-icons/pi';
 import { IGame } from '@src/interfaces';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import slugify from 'slugify';
 
 export function GameModal({ game, close }: { game: IGame; close: () => void }) {
   const { name, image, description, plataform } = game;
@@ -78,10 +80,16 @@ export function GameModal({ game, close }: { game: IGame; close: () => void }) {
                 </h1>
                 <p className="text-[11px] text-secondary-100">{description}</p>
               </div>
-              <button className="flex justify-center items-center gap-3 bg-primary-100 hover:bg-primary-200 text-white text-[10px] lg:text-[13px] font-medium px-8 py-3 rounded-[6px]">
+              <Link
+                href={`/casino/${slugify(`${plataform.name}`, {
+                  lower: true,
+                })}/${game.slug}`}
+                className="flex justify-center items-center gap-3 bg-primary-100 hover:bg-primary-200 text-white text-[10px] lg:text-[13px] font-medium px-8 py-3 rounded-[6px]"
+                aria-label={game.name}
+              >
                 <PiPlayBold className="hidden lg:block" size={18} />
                 Jogar agora
-              </button>
+              </Link>
             </div>
           </div>
         </motion.div>

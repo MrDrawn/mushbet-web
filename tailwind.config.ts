@@ -49,8 +49,11 @@ const config: Config = {
         content: 'max-content',
       },
       zIndex: {
+        '46': '46',
+        '47': '47',
         '48': '48',
         '49': '49',
+        '60': '60',
       },
     },
   },
