@@ -47,7 +47,7 @@ export function Affiliate({ close }: { close: () => void }) {
               <PiXBold size={24} />
             </button>
             <h1 className="text-[18px] text-center text-white font-bold">Afiliado</h1>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col justify-center text-center items-center">
               <h2 className="text-primary-100 mb-4">
                 Ganhe até R$15,00 BRL por convidado
               </h2>
@@ -55,8 +55,7 @@ export function Affiliate({ close }: { close: () => void }) {
                 Convide amigos e ganhe dinheiro
               </h1>
               <p className="text-[13px] lg text-gray-300">
-                Receba saldo em dinheiro para todos os amigos que você indicar a
-                Lunar7Bet.
+                Receba saldo em dinheiro para todos os amigos que você indicar a MushBet.
               </p>
               <div className="h-[1px] w-full bg-gray-800 my-4" />
               <h1 className="text-white">Compartilhe o seu código de convite</h1>

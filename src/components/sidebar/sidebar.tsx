@@ -1,6 +1,13 @@
-import { SidebarItem, routes } from '.';
+import { IRoutes } from '@src/interfaces';
+import { SidebarItem } from '.';
 
-export function Sidebar({ isActiveOffer }: { isActiveOffer: boolean }) {
+export function Sidebar({
+  routes,
+  isActiveOffer,
+}: {
+  routes: IRoutes[];
+  isActiveOffer: boolean;
+}) {
   return (
     <div
       className={`lg:fixed w-[250px] z-10 ${

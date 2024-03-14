@@ -8,8 +8,10 @@ import { Footer } from '@src/components';
 
 import { Toaster } from 'react-hot-toast';
 
-import { MainLayout } from '@src/layouts';
 import { AuthProvider } from '@src/contexts';
+import { useAuthAdmin } from '@src/functions';
+import { redirect } from 'next/navigation';
+import { AdminLayout } from '@src/layouts';
 
 const raleway = Raleway({ subsets: ['latin'] });
 
@@ -21,15 +23,19 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Casa de aposta online | MushBet',
+  title: 'Administração | MushBet',
   description: 'A maior casa de aposta da américa latina.',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { validadeToken } = useAuthAdmin(() => redirect('/'));
+
+  await validadeToken();
+
   return (
     <html lang="pt-br">
       <head>
@@ -60,7 +66,7 @@ export default function RootLayout({
               },
             }}
           />
-          <MainLayout>{children}</MainLayout>
+          <AdminLayout>{children}</AdminLayout>
           <div className="lg:ml-[220px]">
             <Footer />
           </div>

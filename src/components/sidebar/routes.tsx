@@ -5,8 +5,9 @@ import { MdOutlineCasino, MdOutlineLeaderboard } from 'react-icons/md';
 import { PiHandCoinsFill } from 'react-icons/pi';
 
 import { HiOutlineMicrophone, HiOutlineUserGroup } from 'react-icons/hi';
+import { IRoutes } from '@src/interfaces';
 
-export const routes = [
+export const routes: IRoutes[] = [
   {
     icon: <PiTicket size={24} />,
     name: 'Casino',
