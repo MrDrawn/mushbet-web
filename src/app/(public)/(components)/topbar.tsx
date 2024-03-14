@@ -6,8 +6,11 @@ import { apiClient } from '@src/services';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { PiMagnifyingGlass } from 'react-icons/pi';
+import { RiLoader5Fill } from 'react-icons/ri';
 
 export function Topbar() {
+  const [loading, setLoading] = useState(false);
+
   const [active, setActive] = useState(false);
 
   const [games, setGames] = useState<IGame[]>([]);
@@ -19,12 +22,18 @@ export function Topbar() {
   const [search, setSearch] = useState('');
 
   async function getGames() {
+    setLoading(true);
+
     await apiClient
       .get(`/games/search?name=${search}`)
       .then(response => {
         setGames(response.data);
+
+        setLoading(false);
       })
-      .catch(error => {});
+      .catch(error => {
+        setLoading(false);
+      });
   }
 
   useEffect(() => {
@@ -36,10 +45,14 @@ export function Topbar() {
       <AnimatePresence initial={false}>
         {modal && game && <GameModal game={game} close={() => setModal(false)} />}
       </AnimatePresence>
-      <div className="relative z-40 w-full mb-[40px]">
+      <div className="relative z-6 w-full mb-[40px]">
         <div className="relative">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
-            <PiMagnifyingGlass className="text-secondary-100" size={18} />
+            {loading ? (
+              <RiLoader5Fill className="text-primary-100 animate-spin" size={18} />
+            ) : (
+              <PiMagnifyingGlass className="text-secondary-100" size={18} />
+            )}
           </div>
           <input
             id="search"
@@ -85,7 +98,7 @@ export function Topbar() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="z-30 fixed w-[100vw] h-[100vh] top-0 left-0 bg-[#25263A]/70"
+          className="z-5 fixed w-[100vw] h-[100vh] top-0 left-0 bg-[#25263A]/70"
           onClick={() => setActive(false)}
         ></motion.div>
       )}
