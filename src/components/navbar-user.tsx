@@ -56,7 +56,7 @@ export function NavbarUser({
         transition={{ duration: 0.3 }}
         className={`${
           open
-            ? 'absolute bg-dark-300 md:bg-dark-100 border border-dark-200 py-5 lg:w-[180px] rounded-[4px] -right-3 lg:-right-2 top-16 z-30'
+            ? 'absolute bg-dark-100 border border-dark-200 py-5 lg:w-[180px] rounded-[4px] -right-3 lg:-right-2 top-16 z-30'
             : 'hidden'
         }`}
       >

@@ -50,7 +50,7 @@ export function Navbar() {
       <AnimatePresence initial={false}>
         {affiliateOpen && <Affiliate close={() => setAffiliateOpen(false)} />}
       </AnimatePresence>
-      <nav className="flex z-20 justify-between items-center bg-dark-300 md:bg-dark-100 py-[30px] lg:px-5 px-4">
+      <nav className="flex z-20 justify-between items-center bg-dark-100 py-[30px] lg:px-5 px-4">
         <Link href="/" aria-label="MushBet">
           <Image
             src="/logotipo.png"

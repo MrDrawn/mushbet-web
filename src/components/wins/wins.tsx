@@ -21,7 +21,7 @@ export function Wins({ isActiveOffer }: { isActiveOffer: boolean }) {
     <div
       className={`fixed ${
         isActiveOffer
-          ? 'top-[146px] md:top-[149px] lg:top-[154px]'
+          ? 'top-[146px] md:top-[149px] lg:top-[153px]'
           : 'top-[99px] md:top-[149px] lg:top-[104px]'
       } left-0 z-10`}
     >
