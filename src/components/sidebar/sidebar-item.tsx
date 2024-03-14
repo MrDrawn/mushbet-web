@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { ReadonlyURLSearchParams, usePathname, useSearchParams } from 'next/navigation';
 
 import { useEffect, useState } from 'react';
 
@@ -15,9 +15,14 @@ interface ISidebarItem {
   childrens?: ISidebarItem[];
 }
 
-export function SidebarItem({ item }: { item: ISidebarItem }) {
+export function SidebarItem({
+  item,
+  searchParams,
+}: {
+  item: ISidebarItem;
+  searchParams: ReadonlyURLSearchParams;
+}) {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   const [open, setOpen] = useState(false);
 
