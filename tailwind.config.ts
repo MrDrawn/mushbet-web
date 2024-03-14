@@ -21,6 +21,11 @@ const config: Config = {
         'primary-100': 'rgb(95, 215, 50)',
         'primary-200': 'rgb(58, 214, 0)',
         'secondary-100': 'rgb(169, 169, 202)',
+        'dark-100': 'rgb(29, 30, 48)',
+        'dark-200': 'rgb(44, 44, 62)',
+        'dark-300': 'rgb(23, 24, 40)',
+        'dark-400': 'rgb(42, 42, 57)',
+        'dark-500': 'rgb(27, 28, 46)',
       },
       borderColor: {
         'primary-100': 'rgb(95, 215, 50)',

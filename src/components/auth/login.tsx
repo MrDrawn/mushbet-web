@@ -11,7 +11,7 @@ interface IFormData {
   remember_me: boolean;
 }
 
-export function LoginForm() {
+export function LoginForm({ close }: { close: () => void }) {
   const [loading, setLoading] = useState(false);
 
   const { signIn } = useUser();

@@ -85,7 +85,7 @@ export function Auth({
               </button>
             </div>
             {selectedTab === 'login' ? (
-              <LoginForm />
+              <LoginForm close={close} />
             ) : (
               <RegisterForm setSelectedTab={setSelectedTab} />
             )}

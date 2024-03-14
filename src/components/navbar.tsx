@@ -5,9 +5,13 @@ import Link from 'next/link';
 
 import { useState } from 'react';
 
-import { Auth } from '.';
+import { Auth, NavbarUser } from '.';
 
-import { AnimatePresence } from 'framer-motion';
+import { useUser } from '@src/contexts';
+
+import { PiArrowsCounterClockwiseBold, PiWallet } from 'react-icons/pi';
+
+import { motion, AnimatePresence } from 'framer-motion';
 
 import { PiKeyBold, PiList, PiUserBold } from 'react-icons/pi';
 
@@ -15,6 +19,20 @@ export function Navbar() {
   const [authModal, setAuthModal] = useState(false);
 
   const [initialAuthTab, setInitialAuthTab] = useState<'login' | 'register'>('register');
+
+  const [depositOpen, setDepositOpen] = useState(false);
+  const [withdrawOpen, setWithdrawOpen] = useState(false);
+  const [affiliateOpen, setAffiliateOpen] = useState(false);
+
+  const [animationUpdateWallet, setAnimationUpdateWallet] = useState(false);
+
+  const { user, recoverUser } = useUser();
+
+  async function updateWallet() {
+    setAnimationUpdateWallet(!animationUpdateWallet);
+
+    recoverUser();
+  }
 
   return (
     <>
@@ -34,45 +52,85 @@ export function Navbar() {
             alt="MushBet"
           />
         </Link>
-        <ul className="flex items-center gap-3 md:gap-8">
-          <li>
-            <button
-              className="flex items-center gap-3 text-white text-[10px] lg:text-[13px] font-medium"
-              arial-label="Login"
-              onClick={() => {
-                setInitialAuthTab('login');
-                setAuthModal(true);
-              }}
-            >
-              <PiUserBold size={18} />
-              Login
-            </button>
-          </li>
-          <li>
-            <button
-              className="flex items-center gap-3 bg-primary-100 hover:bg-primary-200 text-white text-[10px] lg:text-[13px] font-medium px-8 py-3 rounded-[6px]"
-              arial-label="Cadastre-se"
-              onClick={() => {
-                setInitialAuthTab('register');
-                setAuthModal(true);
-              }}
-            >
-              <PiKeyBold className="hidden lg:block" size={18} />
-              Cadastre-se
-            </button>
-          </li>
-          <li className="hidden lg:block">
-            <div className="flex items-center gap-4 bg-dark-200 px-8 py-3 rounded-[6px] text-[14px] text-primary-100">
-              <div className="w-[20px] h-[20px] bg-primary-100 border-[5px] border-dark-200/60 rounded-full"></div>{' '}
-              1.340 Jogando agora
-            </div>
-          </li>
-          <li className="block lg:hidden">
-            <button arial-label="Menu">
-              <PiList className="text-white" size={32} />
-            </button>
-          </li>
-        </ul>
+        {user ? (
+          <ul className="flex items-center gap-3 md:gap-6">
+            <li>
+              <button
+                className="flex items-center gap-3 bg-primary-100 hover:bg-primary-200 text-white text-[12px] lg:text-[13px] font-medium px-6 lg:px-8 py-3 rounded-[6px]"
+                arial-label="Depositar"
+                // onClick={() => setDepositOpen(true)}
+              >
+                Depositar
+              </button>
+            </li>
+            <li className="bg-dark-200 px-6 lg:px-8 py-3 rounded-[6px] flex items-center gap-3">
+              <PiWallet className="hidden lg:block text-white" size={20} />
+              <p className="text-[12px] lg:text-[13px] text-white font-semibold">
+                {user.wallet.balance.toLocaleString('pt-BR', {
+                  currency: 'BRL',
+                  style: 'currency',
+                })}
+              </p>
+              <motion.button
+                animate={{ rotate: animationUpdateWallet ? 360 : 0 }}
+                transition={{
+                  duration: 1,
+                }}
+                onClick={updateWallet}
+              >
+                <PiArrowsCounterClockwiseBold className="text-white" size={20} />
+              </motion.button>
+            </li>
+            <li>
+              <NavbarUser
+                {...user}
+                setWithdrawnOpen={() => setWithdrawOpen(true)}
+                setDepositOpen={() => setDepositOpen(true)}
+                setAffiliateOpen={() => setAffiliateOpen(true)}
+              />
+            </li>
+          </ul>
+        ) : (
+          <ul className="flex items-center gap-3 md:gap-8">
+            <li>
+              <button
+                className="flex items-center gap-3 text-white text-[10px] lg:text-[13px] font-medium"
+                arial-label="Login"
+                onClick={() => {
+                  setInitialAuthTab('login');
+                  setAuthModal(true);
+                }}
+              >
+                <PiUserBold size={18} />
+                Login
+              </button>
+            </li>
+            <li>
+              <button
+                className="flex items-center gap-3 bg-primary-100 hover:bg-primary-200 text-white text-[10px] lg:text-[13px] font-medium px-8 py-3 rounded-[6px]"
+                arial-label="Cadastre-se"
+                onClick={() => {
+                  setInitialAuthTab('register');
+                  setAuthModal(true);
+                }}
+              >
+                <PiKeyBold className="hidden lg:block" size={18} />
+                Cadastre-se
+              </button>
+            </li>
+            <li className="hidden lg:block">
+              <div className="flex items-center gap-4 bg-dark-200 px-8 py-3 rounded-[6px] text-[14px] text-primary-100">
+                <div className="w-[20px] h-[20px] bg-primary-100 border-[5px] border-dark-200/60 rounded-full"></div>{' '}
+                1.340 Jogando agora
+              </div>
+            </li>
+            <li className="block lg:hidden">
+              <button arial-label="Menu">
+                <PiList className="text-white" size={32} />
+              </button>
+            </li>
+          </ul>
+        )}
       </nav>
     </>
   );
