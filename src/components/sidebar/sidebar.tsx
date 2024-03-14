@@ -1,9 +1,6 @@
-import { useSearchParams } from 'next/navigation';
-
 import { IRoutes } from '@src/interfaces';
 
 import { SidebarItem } from '.';
-import { Suspense } from 'react';
 
 export function Sidebar({
   routes,
@@ -12,8 +9,6 @@ export function Sidebar({
   routes: IRoutes[];
   isActiveOffer: boolean;
 }) {
-  const searchParams = useSearchParams();
-
   return (
     <div
       className={`lg:fixed w-[250px] z-10 ${
@@ -22,9 +17,7 @@ export function Sidebar({
     >
       <div className="hidden lg:flex h-full flex-col gap-3 p-[9px]">
         {routes.map((item, index) => (
-          <Suspense key={index}>
-            <SidebarItem item={item} searchParams={searchParams} />
-          </Suspense>
+          <SidebarItem key={index} item={item} />
         ))}
       </div>
     </div>
