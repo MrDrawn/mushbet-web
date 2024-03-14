@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { Auth, Deposit, Withdraw } from '.';
+import { Affiliate, Auth, Deposit, Withdraw } from '.';
 
 import { AnimatePresence } from 'framer-motion';
 
@@ -36,9 +36,10 @@ export function NavbarMobileBottom() {
           />
         )}
       </AnimatePresence>
+   */}
       <AnimatePresence initial={false}>
-        {affiliateOpen && <UserAffiliate close={() => setAffiliateOpen(false)} />}
-        </AnimatePresence>*/}
+        {affiliateOpen && <Affiliate close={() => setAffiliateOpen(false)} />}
+      </AnimatePresence>
       <AnimatePresence initial={false}>
         {depositOpen && <Deposit close={() => setDepositOpen(false)} />}
       </AnimatePresence>

@@ -10,4 +10,5 @@ export * from './auth';
 export * from './deposit';
 export * from './withdraw';
 export * from './pix';
+export * from './affiliate';
 export * from './footer';
