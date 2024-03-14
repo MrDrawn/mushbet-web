@@ -56,11 +56,6 @@ export const routes: IRoutes[] = [
     ],
   },
   {
-    icon: <PiHandCoinsFill size={24} />,
-    name: 'Depósito',
-    url: '/deposit',
-  },
-  {
     icon: <MdOutlineLeaderboard size={24} />,
     name: 'Ranking',
     url: '/ranking',
