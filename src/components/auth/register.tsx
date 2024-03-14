@@ -134,7 +134,7 @@ export function RegisterForm({
             id="document"
             type="text"
             className={`bg-[#242435] px-[15px] text-[14px] py-[10px] placeholder:text-[#45454D] text-secondary-100 rounded-[5px] outline-none ${
-              errors.username && 'outline-red-500'
+              errors.document && 'outline-red-500'
             }`}
             mask="999.999.999-99"
             placeholder="Seu CPF"
@@ -255,6 +255,7 @@ export function RegisterForm({
         <button
           type="submit"
           className="bg-primary-100 hover:bg-primary-200 text-white rounded-[5px] py-[15px] w-full font-medium text-[14px] transition-all duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
+          arial-label="Cadastrar"
         >
           {loading ? (
             <span className="flex justify-center items-center gap-2">

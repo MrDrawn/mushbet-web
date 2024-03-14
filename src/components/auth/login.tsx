@@ -94,6 +94,7 @@ export function LoginForm({ close }: { close: () => void }) {
         <button
           type="submit"
           className="bg-primary-100 hover:bg-primary-200 text-white rounded-[5px] py-[15px] w-full font-medium text-[14px] transition-all duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
+          arial-label="Login"
         >
           {loading ? (
             <span className="flex justify-center items-center gap-2">

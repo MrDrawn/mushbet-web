@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 import { useState } from 'react';
 
-import { Auth, NavbarUser } from '.';
+import { Auth, Deposit, NavbarUser, Withdraw } from '.';
 
 import { useUser } from '@src/contexts';
 
@@ -41,6 +41,12 @@ export function Navbar() {
           <Auth initialTab={initialAuthTab} close={() => setAuthModal(false)} />
         )}
       </AnimatePresence>
+      <AnimatePresence initial={false}>
+        {depositOpen && <Deposit close={() => setDepositOpen(false)} />}
+      </AnimatePresence>
+      <AnimatePresence initial={false}>
+        {withdrawOpen && <Withdraw close={() => setWithdrawOpen(false)} />}
+      </AnimatePresence>
       <nav className="flex z-20 justify-between items-center bg-dark-300 md:bg-dark-100 py-[30px] lg:px-5 px-4">
         <Link href="/" aria-label="MushBet">
           <Image
@@ -58,7 +64,7 @@ export function Navbar() {
               <button
                 className="flex items-center gap-3 bg-primary-100 hover:bg-primary-200 text-white text-[12px] lg:text-[13px] font-medium px-6 lg:px-8 py-3 rounded-[6px]"
                 arial-label="Depositar"
-                // onClick={() => setDepositOpen(true)}
+                onClick={() => setDepositOpen(true)}
               >
                 Depositar
               </button>

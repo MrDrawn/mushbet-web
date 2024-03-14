@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { Auth } from '.';
+import { Auth, Deposit, Withdraw } from '.';
 
 import { AnimatePresence } from 'framer-motion';
 
@@ -28,7 +28,7 @@ export function NavbarMobileBottom() {
 
   return (
     <>
-      {/*} <AnimatePresence initial={false}>
+      {/* <AnimatePresence initial={false}>
         {open && (
           <NavbarMobile
             isActivePromotion={isActivePromotion}
@@ -37,14 +37,14 @@ export function NavbarMobileBottom() {
         )}
       </AnimatePresence>
       <AnimatePresence initial={false}>
+        {affiliateOpen && <UserAffiliate close={() => setAffiliateOpen(false)} />}
+        </AnimatePresence>*/}
+      <AnimatePresence initial={false}>
         {depositOpen && <Deposit close={() => setDepositOpen(false)} />}
       </AnimatePresence>
       <AnimatePresence initial={false}>
         {withdrawOpen && <Withdraw close={() => setWithdrawOpen(false)} />}
       </AnimatePresence>
-      <AnimatePresence initial={false}>
-        {affiliateOpen && <UserAffiliate close={() => setAffiliateOpen(false)} />}
-        </AnimatePresence>*/}
       <AnimatePresence initial={false}>
         {authOpen && <Auth initialTab={typeAuth} close={() => setAuthOpen(false)} />}
       </AnimatePresence>
@@ -92,7 +92,7 @@ export function NavbarMobileBottom() {
                 <li className="relative">
                   <Link
                     className={`flex flex-col items-center text-[.68rem] ${
-                      withdrawOpen === true
+                      pathname === '/support'
                         ? 'text-primary-100'
                         : 'text-white/70 hover:text-primary-100'
                     } font-medium px-5 py-2.5`}
@@ -144,7 +144,7 @@ export function NavbarMobileBottom() {
                 <li className="relative">
                   <Link
                     className={`flex flex-col items-center text-[.68rem] ${
-                      withdrawOpen === true
+                      pathname === '/support'
                         ? 'text-primary-100'
                         : 'text-white/70 hover:text-primary-100'
                     } font-medium px-5 py-2.5`}
