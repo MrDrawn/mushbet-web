@@ -2,7 +2,7 @@ import { headers } from 'next/headers';
 
 import { Container } from '@src/components';
 
-import { Banners, Games, Popular, Topbar } from './(components)';
+import { Banners, Plataforms, Popular, Topbar } from './(components)';
 
 export default function Home() {
   const header = headers();
@@ -18,7 +18,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col gap-[30px] px-[20px] lg:px-0">
           <Popular />
-          <Games />
+          <Plataforms />
         </div>
       </Container>
     </div>
