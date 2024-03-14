@@ -8,7 +8,7 @@ import { Footer } from '@src/components';
 
 import { Toaster } from 'react-hot-toast';
 
-import { MainLayout } from '@src/layouts';
+import { MainLayout } from '../layouts';
 import { AuthProvider } from '@src/contexts';
 
 const raleway = Raleway({ subsets: ['latin'] });

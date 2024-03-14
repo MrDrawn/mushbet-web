@@ -11,7 +11,7 @@ import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from '@src/contexts';
 import { useAuthAdmin } from '@src/functions';
 import { redirect } from 'next/navigation';
-import { AdminLayout } from '@src/layouts';
+import { AdminLayout } from '../layouts';
 
 const raleway = Raleway({ subsets: ['latin'] });
 
