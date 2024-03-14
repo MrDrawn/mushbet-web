@@ -22,7 +22,7 @@ export function Wins({ isActiveOffer }: { isActiveOffer: boolean }) {
       className={`fixed ${
         isActiveOffer
           ? 'top-[146px] md:top-[149px] lg:top-[154px]'
-          : 'top-[99px] md:top-[149px] lg:top-[105px]'
+          : 'top-[99px] md:top-[149px] lg:top-[104px]'
       } left-0 z-10`}
     >
       <div className="flex w-full bg-dark-200 py-3 shadow-sm">

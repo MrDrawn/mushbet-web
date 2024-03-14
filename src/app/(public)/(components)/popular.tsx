@@ -24,7 +24,6 @@ export function Popular() {
             quality={100}
             alt="Fortune Dragon"
           />
-          <div className="rounded-lg w-full h-full absolute bottom-0 z-20 flex flex-col justify-end px-3 pb-3 transition-all ease-in-out duration-300"></div>
         </Link>
         <Link
           href="/casino/pg-soft/fortune-rabbit"
@@ -40,7 +39,6 @@ export function Popular() {
             quality={100}
             alt="Fortune Tiger"
           />
-          <div className="rounded-lg w-full h-full absolute bottom-0 z-20 flex flex-col justify-end px-3 pb-3 transition-all ease-in-out duration-300"></div>
         </Link>
         <Link href="/casino/mines" className="relative flex justify-center group">
           <Image
@@ -53,7 +51,6 @@ export function Popular() {
             quality={100}
             alt="Mines"
           />
-          <div className="rounded-lg w-full h-full absolute bottom-0 z-20 flex flex-col justify-end px-3 pb-3 transition-all ease-in-out duration-300"></div>
         </Link>
       </div>
     </div>

@@ -12,7 +12,7 @@ export function Footer() {
   return (
     <footer>
       <div className="bg-dark-100">
-        <div className="p-[32px] lg:p-[64px]">
+        <div className="px-[32px] pt-[32px] pb-[75px] lg:p-[64px]">
           <div className="flex flex-col lg:flex-row justify-between lg:gap-0 gap-10">
             <div className="flex flex-col gap-4 max-w-[450px]">
               <Link href="/" aria-label="MushBet">
@@ -134,8 +134,8 @@ export function Footer() {
               </div>
             </div>
           </div>
-          <hr className="bg-[#74757C] opacity-[0.3] h-[1px] w-full mt-10 mb-5" />
-          <div className="flex flex-col md:flex-row justify-between items-center pt-[25px] gap-5 md:gap-0">
+          <hr className="bg-[#74757C] opacity-[0.3] h-[1px] w-full mt-5 mb-5" />
+          <div className="flex flex-col md:flex-row justify-between items-center gap-5 md:gap-0">
             <p className="text-[12px] lg:text-[14px] text-[#8D8DAC]">
               Copyright © {new Date().getFullYear()} AlphaBet - Todos os direitos
               reservados.

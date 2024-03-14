@@ -1,6 +1,7 @@
 export * from './container';
 export * from './navbar';
 export * from './navbar-user';
+export * from './navbar-bottom';
 export * from './offerbar';
 export * from './sidebar';
 export * from './wins';
