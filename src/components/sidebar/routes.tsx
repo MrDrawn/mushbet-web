@@ -55,11 +55,11 @@ export const routes: IRoutes[] = [
       },
     ],
   },
-  {
-    icon: <MdOutlineLeaderboard size={24} />,
-    name: 'Ranking',
-    url: '/ranking',
-  },
+  // {
+  // icon: <MdOutlineLeaderboard size={24} />,
+  // name: 'Ranking',
+  // url: '/ranking',
+  //},
   {
     icon: <HiOutlineUserGroup size={24} />,
     name: 'Afiliado',
@@ -68,6 +68,6 @@ export const routes: IRoutes[] = [
   {
     icon: <HiOutlineMicrophone size={24} />,
     name: 'Suporte',
-    url: '/',
+    url: '/support',
   },
 ];
