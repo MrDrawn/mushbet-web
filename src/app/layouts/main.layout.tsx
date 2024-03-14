@@ -26,8 +26,8 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
       <main
         className={`overflow-x-hidden ${
           isActiveOffer
-            ? 'pt-[233px] md:pt-[241px] lg:ml-[250px]'
-            : 'pt-[178px] md:pt-[198px] lg:ml-[250px]'
+            ? 'pt-[226px] md:pt-[229px] lg:ml-[250px]'
+            : 'pt-[178px] md:pt-[184px] lg:ml-[250px]'
         }`}
       >
         <div className="lg:px-[34px] lg:pt-[40px] pb-[40px] min-h-[100vh]">
