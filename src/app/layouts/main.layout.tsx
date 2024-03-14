@@ -2,7 +2,14 @@
 
 import { useState } from 'react';
 
-import { Navbar, OfferBar, Sidebar, Wins, routes } from '@src/components';
+import {
+  Navbar,
+  NavbarMobileBottom,
+  OfferBar,
+  Sidebar,
+  Wins,
+  routes,
+} from '@src/components';
 
 export function MainLayout({ children }: { children: React.ReactNode }) {
   const [isActiveOffer, setIsActiveOffer] = useState(true);
@@ -15,6 +22,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
       </header>
       <Wins isActiveOffer={isActiveOffer} />
       <Sidebar routes={routes} isActiveOffer={isActiveOffer} />
+      <NavbarMobileBottom />
       <main
         className={`overflow-x-hidden ${
           isActiveOffer
