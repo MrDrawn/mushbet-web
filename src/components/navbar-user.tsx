@@ -63,7 +63,7 @@ export function NavbarUser({
         <PiCaretUpFill className="absolute text-dark-200 -top-[21px] right-1" size={32} />
         <div className="flex flex-col gap-3">
           <Link
-            href="/profile?tab=profile"
+            href="/profile?tab=withdraw"
             className="flex items-center gap-3 text-[14px] text-white hover:text-primary-100 px-5"
             aria-label="Minha Conta"
             onClick={() => setOpen(false)}
@@ -78,15 +78,15 @@ export function NavbarUser({
             <PiLink size={18} /> Convidar
           </button>
           <Link
-            href="/profile?tab=historics"
+            href="/profile?tab=bet"
             className="flex items-center gap-3 text-[14px] text-white hover:text-primary-100 px-5"
-            aria-label="Histórico"
+            aria-label="Apostas"
             onClick={() => setOpen(false)}
           >
-            <PiClock size={18} /> Histórico
+            <PiClock size={18} /> Apostas
           </Link>
           <Link
-            href="/profile?tab=transactions"
+            href="/profile?tab=deposit"
             className="flex items-center gap-3 text-[14px] text-white hover:text-primary-100 px-5"
             aria-label="Transações"
             onClick={() => setOpen(false)}

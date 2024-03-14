@@ -6,28 +6,18 @@ import React from 'react';
 interface Item {
   title: string | React.ReactNode;
   content: string | React.ReactNode;
-  identifier: 'WITHDRAW' | 'DEPOSIT' | 'BET';
+  identifier: 'INDICATION';
 }
 
-export function Tabs({
-  items,
-  tab,
-}: {
-  items: Item[];
-  tab: 'withdraw' | 'deposit' | 'bet';
-}) {
+export function Tabs({ items, tab }: { items: Item[]; tab: 'indication' }) {
   let tabString = tab;
 
   const queryTab = {
-    withdraw: 'WITHDRAW',
-    deposit: 'DEPOSIT',
-    bet: 'BET',
+    indication: 'INDICATION',
   };
 
   const inverseQueryTab = {
-    WITHDRAW: 'withdraw',
-    DEPOSIT: 'deposit',
-    BET: 'bet',
+    INDICATION: 'indication',
   };
 
   return (
@@ -43,7 +33,7 @@ export function Tabs({
                     ? 'text-white'
                     : 'text-[#A9A9CA]'
                 } `}
-                href={`/profile?tab=${inverseQueryTab[item.identifier]}`}
+                href={`/affiliate?tab=${inverseQueryTab[item.identifier]}`}
               >
                 {item.identifier === queryTab[tabString] && (
                   <>
@@ -57,9 +47,7 @@ export function Tabs({
           </div>
         </div>
         <div className="mt-[40px]">
-          {queryTab[tabString] === 'WITHDRAW' && items[0].content}
-          {queryTab[tabString] === 'DEPOSIT' && items[1].content}
-          {queryTab[tabString] === 'BET' && items[2].content}
+          {queryTab[tabString] === 'INDICATION' && items[0].content}
         </div>
       </div>
     </div>

@@ -63,11 +63,11 @@ export const routes: IRoutes[] = [
   {
     icon: <HiOutlineUserGroup size={24} />,
     name: 'Afiliado',
-    url: '/affiliate',
+    url: '/affiliate?tab=indication',
   },
   {
     icon: <HiOutlineMicrophone size={24} />,
     name: 'Suporte',
-    url: '/affiliate',
+    url: '/',
   },
 ];

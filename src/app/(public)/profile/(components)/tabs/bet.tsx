@@ -9,7 +9,7 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { RiLoader4Fill } from 'react-icons/ri';
 
-export function WithdrawTab() {
+export function BetTab() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -23,7 +23,7 @@ export function WithdrawTab() {
     setLoading(true);
 
     await apiClient
-      .get(`/transactions/user?page=${page}&type=WITHDRAW`)
+      .get(`/transactions/user?page=${page}&historic=HISTORIC`)
       .then(response => {
         setTransactions(response.data);
 
@@ -43,7 +43,7 @@ export function WithdrawTab() {
           <thead className="text-[15px] font-medium text-white">
             <tr>
               <th scope="col" className="px-6 py-5">
-                Meio de pagamento
+                Jogo
               </th>
               <th scope="col" className="pl-4 py-5">
                 Valor
@@ -78,7 +78,7 @@ export function WithdrawTab() {
                     scope="row"
                     className="pl-4 py-4 font-medium whitespace-nowrap text-white rounded-l-[4px]"
                   >
-                    {transaction.payment_gateway}
+                    {transaction.game?.name}
                   </th>
                   <td className="px-6 py-4 text-white">
                     {transaction.amount.toLocaleString('pt-br', {
@@ -86,13 +86,7 @@ export function WithdrawTab() {
                       style: 'currency',
                     })}
                   </td>
-                  <td className="px-6 py-4 text-white">
-                    {(transaction.type === 'DEPOSIT' && 'Depósito') ||
-                      (transaction.type === 'WITHDRAW' && 'Saque') ||
-                      (transaction.type === 'INDICATION' && 'Indicação') ||
-                      (transaction.type === 'WIN' && 'Vitória') ||
-                      (transaction.type === 'BET' && 'Perdeu')}
-                  </td>
+                  <td className="px-6 py-4 text-white">Aposta</td>
                   <td className="px-6 py-4 text-white">
                     {transaction.created_at
                       ? format(new Date(transaction.created_at), "dd/MM/yyyy 'às' HH:mm")
@@ -104,13 +98,11 @@ export function WithdrawTab() {
                       : null}
                   </td>
                   <td className="px-6 py-4 rounded-r-[4px] text-white">
-                    {(transaction.status === 'PENDING' && 'Pendente') ||
-                      (transaction.status === 'PAID' && 'Aprovado') ||
-                      (transaction.status === 'CANCELED' && 'Cancelado') ||
-                      (transaction.status === 'REFUNDED' && 'Reembolsado') ||
-                      (transaction.status === 'REJECTED' && 'Recusado') ||
-                      (transaction.status === 'FAILED' && 'Falhou') ||
-                      (transaction.status === 'WAITING_PAYMENT_GATEWAY' && 'Aguardando')}
+                    {(transaction.type === 'DEPOSIT' && 'Depósito') ||
+                      (transaction.type === 'WITHDRAW' && 'Saque') ||
+                      (transaction.type === 'INDICATION' && 'Indicação') ||
+                      (transaction.type === 'WIN' && 'Ganhou') ||
+                      (transaction.type === 'BET' && 'Perdeu')}
                   </td>
                 </tr>
               ))
@@ -131,7 +123,7 @@ export function WithdrawTab() {
         <nav aria-label="Paginação">
           <ul className="list-style-none flex gap-2">
             <li>
-              <Link href={pathname + `?tab=withdraw&page=${Number(page) - 1}`}>
+              <Link href={pathname + `?tab=bet&page=${Number(page) - 1}`}>
                 <button
                   className="relative block bg-transparent px-3 py-1.5 text-sm md:text-md rounded-full transition-all duration-300 text-white hover:bg-dark-200 disabled:opacity-50 disabled:cursor-not-allowed"
                   disabled={Number(page) === 1}
@@ -152,7 +144,7 @@ export function WithdrawTab() {
               </Link>
             </li>
             <li>
-              <Link href={pathname + `?tab=withdraw&page=${Number(page) + 1}`}>
+              <Link href={pathname + `?tab=bet&page=${Number(page) + 1}`}>
                 <button
                   className="relative block bg-transparent px-3 py-1.5 text-sm md:text-md rounded-full transition-all duration-300 text-white hover:bg-dark-200 disabled:opacity-50 disabled:cursor-not-allowed"
                   disabled={transactions.length < 9 ? true : false}

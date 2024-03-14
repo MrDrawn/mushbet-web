@@ -9,7 +9,7 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { RiLoader4Fill } from 'react-icons/ri';
 
-export function WithdrawTab() {
+export function DepositTab() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -23,7 +23,7 @@ export function WithdrawTab() {
     setLoading(true);
 
     await apiClient
-      .get(`/transactions/user?page=${page}&type=WITHDRAW`)
+      .get(`/transactions/user?page=${page}&type=DEPOSIT`)
       .then(response => {
         setTransactions(response.data);
 
@@ -131,7 +131,7 @@ export function WithdrawTab() {
         <nav aria-label="Paginação">
           <ul className="list-style-none flex gap-2">
             <li>
-              <Link href={pathname + `?tab=withdraw&page=${Number(page) - 1}`}>
+              <Link href={pathname + `?tab=deposit&page=${Number(page) - 1}`}>
                 <button
                   className="relative block bg-transparent px-3 py-1.5 text-sm md:text-md rounded-full transition-all duration-300 text-white hover:bg-dark-200 disabled:opacity-50 disabled:cursor-not-allowed"
                   disabled={Number(page) === 1}
@@ -152,7 +152,7 @@ export function WithdrawTab() {
               </Link>
             </li>
             <li>
-              <Link href={pathname + `?tab=withdraw&page=${Number(page) + 1}`}>
+              <Link href={pathname + `?tab=deposit&page=${Number(page) + 1}`}>
                 <button
                   className="relative block bg-transparent px-3 py-1.5 text-sm md:text-md rounded-full transition-all duration-300 text-white hover:bg-dark-200 disabled:opacity-50 disabled:cursor-not-allowed"
                   disabled={transactions.length < 9 ? true : false}

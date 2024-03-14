@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 
 import { useEffect, useState } from 'react';
 
@@ -17,6 +17,7 @@ interface ISidebarItem {
 
 export function SidebarItem({ item }: { item: ISidebarItem }) {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   const [open, setOpen] = useState(false);
 
@@ -39,7 +40,7 @@ export function SidebarItem({ item }: { item: ISidebarItem }) {
       <div className={`${open ? 'rounded-md' : ''}`}>
         <motion.div
           className={`${
-            item.url === pathname || open
+            pathname === item.url || open
               ? 'bg-gradient-to-r from-primary-100/25 from-5% via-[#212134] via-95% text-white'
               : 'bg-transparent text-secondary-100 hover:text-white'
           } flex gap-5 p-3 border-gray-900 w-full rounded-[4px] cursor-pointer`}
@@ -60,7 +61,8 @@ export function SidebarItem({ item }: { item: ISidebarItem }) {
               <Link key={index} href={child.url ? child.url : '#'}>
                 <motion.div
                   className={`${
-                    child.url === pathname
+                    `${pathname}${searchParams.size > 0 ? `?${searchParams}` : ''}` ===
+                    child.url
                       ? 'bg-gradient-to-r from-primary-100/25 from-10% via-[#212134] via-90% border-l-2 border-primary-100/100 text-primary-100'
                       : 'bg-transparent text-secondary-100 hover:text-white'
                   } flex gap-5 p-3 border-gray-900 w-full border-opacity-10 cursor-pointer`}
@@ -81,7 +83,7 @@ export function SidebarItem({ item }: { item: ISidebarItem }) {
       <Link href={item.url ? item.url : '#'}>
         <motion.div
           className={`${
-            item.url === pathname
+            `${pathname}${searchParams.size > 0 ? `?${searchParams}` : ''}` === item.url
               ? 'bg-gradient-to-r from-primary-100/25 from-5% via-[#212134] via-95% text-white'
               : 'bg-transparent text-secondary-100 hover:text-white'
           } flex gap-5 p-3 border-gray-900 w-full border-opacity-10 rounded-md cursor-pointer`}
