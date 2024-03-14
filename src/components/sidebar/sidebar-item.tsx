@@ -42,7 +42,7 @@ export function SidebarItem({ item }: { item: ISidebarItem }) {
             item.url === pathname || open
               ? 'bg-gradient-to-r from-primary-100/25 from-5% via-[#212134] via-95% text-white'
               : 'bg-transparent text-secondary-100 hover:text-white'
-          } flex gap-5 p-3 border-gray-900 w-full rounded-[12px] cursor-pointer`}
+          } flex gap-5 p-3 border-gray-900 w-full rounded-[4px] cursor-pointer`}
           onClick={() => setOpen(!open)}
         >
           {item.icon}

@@ -18,14 +18,14 @@ export function Search() {
       <input
         id="email"
         type="text"
-        className="w-full text-[14px] bg-gray-800 border border-gray-700 rounded-md py-2 px-3 outline-none"
+        className={`w-full bg-[#242435] px-[15px] text-[14px] py-[10px] placeholder:text-[#45454D] text-secondary-100 rounded-[5px] outline-none`}
         placeholder="Pesquisar por usuario..."
         required
         onChange={event => setSearch(event.target.value)}
       />
       <Link
         href={pathname + (search.length > 0 ? `?search=${search}&page=1` : `?page=1`)}
-        className="text-[14px] bg-purple-400 hover:bg-purple-500 text-white px-3 py-3 rounded-md transition-colors duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
+        className="bg-primary-100 hover:bg-primary-200 text-white rounded-[5px] px-[20px] py-[12px] font-medium text-[14px] transition-all duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
       >
         <PiMagnifyingGlassBold size={18} />
       </Link>

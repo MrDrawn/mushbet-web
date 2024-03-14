@@ -40,7 +40,7 @@ export function Transactions() {
   }, [page, search]);
 
   return (
-    <div className="bg-gray-900 mt-8 border border-gray-800 rounded-[12px]">
+    <div className="bg-dark-100 mt-8 border border-dark-200 rounded-[4px]">
       <div className="relative overflow-x-auto overflow-y-hidden sm:rounded-lg">
         <table className="w-full text-left text-slate-500">
           <thead className="text-[14px] text-white uppercase">
@@ -111,7 +111,7 @@ export function Transactions() {
             </li>
             <li aria-current="page">
               <Link
-                className="relative block bg-transparent border border-gray-800 rounded-full px-3 py-1 text-sm md:text-md font-medium text-white transition-all duration-300"
+                className="relative block bg-transparent border border-dark-200 rounded-full px-3 py-1 text-sm md:text-md font-medium text-white transition-all duration-300"
                 href="#!"
               >
                 {Number(page)}

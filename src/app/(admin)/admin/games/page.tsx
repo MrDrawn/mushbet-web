@@ -15,7 +15,7 @@ export default function GamesPage() {
           </h1>
           <Link
             href="/admin/games/create"
-            className="text-[12px] lg:text-[14px] bg-purple-400 hover:bg-purple-500 text-white py-2 px-5 rounded-lg transition-all ease-in-out duration-300"
+            className="bg-primary-100 hover:bg-primary-200 text-white rounded-[5px] px-[20px] py-[15px] font-medium text-[14px] transition-all duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Criar jogo
           </Link>

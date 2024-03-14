@@ -31,7 +31,7 @@ export function LastDeposits() {
   }, []);
 
   return (
-    <div className="bg-gray-900 mt-8 border border-gray-800 rounded-[12px]">
+    <div className="bg-dark-100 mt-8 border border-dark-200 rounded-[4px]">
       <div className="relative overflow-x-auto overflow-y-hidden sm:rounded-lg">
         <table className="w-full text-left text-slate-500">
           <thead className="text-[14px] text-white uppercase">

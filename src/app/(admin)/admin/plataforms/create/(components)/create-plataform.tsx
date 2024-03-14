@@ -5,6 +5,7 @@ import { apiClient } from '@src/services';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
+import { RiLoader5Fill } from 'react-icons/ri';
 
 interface IFormData {
   name: string;
@@ -58,7 +59,7 @@ export function CreatePlataform() {
           <input
             id="name"
             type="text"
-            className="w-full text-[14px] bg-gray-900 border border-gray-800 text-white px-2.5 py-2.5 rounded-lg outline-none"
+            className="w-full text-[14px] bg-dark-100 border-dark-200 text-white px-2.5 py-2.5 rounded-lg outline-none"
             placeholder="Nome da plataforma"
             required
             readOnly={loading}
@@ -72,7 +73,7 @@ export function CreatePlataform() {
           <input
             id="image"
             type="text"
-            className="w-full text-[14px] bg-gray-900 border border-gray-800 text-white px-2.5 py-2.5 rounded-lg outline-none"
+            className="w-full text-[14px] bg-dark-100 border-dark-200 text-white px-2.5 py-2.5 rounded-lg outline-none"
             placeholder="Imagem da plataforma"
             required
             readOnly={loading}
@@ -86,7 +87,7 @@ export function CreatePlataform() {
         </label>
         <textarea
           id="description"
-          className="w-full text-[14px] bg-gray-900 border border-gray-800 text-white px-2.5 py-2.5 rounded-lg outline-none"
+          className="w-full text-[14px] bg-dark-100 border-dark-200 text-white px-2.5 py-2.5 rounded-lg outline-none"
           placeholder="Descrição da plataforma"
           required
           readOnly={loading}
@@ -101,7 +102,7 @@ export function CreatePlataform() {
         <input
           id="external_id"
           type="text"
-          className="w-full text-[14px] bg-gray-900 border border-gray-800 text-white px-2.5 py-2.5 rounded-lg outline-none"
+          className="w-full text-[14px] bg-dark-100 border-dark-200 text-white px-2.5 py-2.5 rounded-lg outline-none"
           placeholder="ID da plataforma"
           required
           readOnly={loading}
@@ -130,10 +131,16 @@ export function CreatePlataform() {
       </div>
       <button
         type="submit"
-        className="text-[12px] lg:text-[14px] bg-purple-400 hover:bg-purple-500 text-white py-3 px-5 rounded-lg transition-all ease-in-out duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="bg-primary-100 hover:bg-primary-200 text-white rounded-[5px] px-[20px] py-[15px] font-medium text-[14px] transition-all duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed w-full"
         disabled={loading}
       >
-        Criar plataforma
+        {loading ? (
+          <span className="flex justify-center items-center gap-2">
+            <RiLoader5Fill className="animate-spin" size={20} /> Carregando...
+          </span>
+        ) : (
+          'Criar plataforma'
+        )}
       </button>
     </form>
   );
