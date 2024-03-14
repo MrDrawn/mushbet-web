@@ -98,6 +98,7 @@ export function RegisterForm({
   useEffect(() => {
     if (indication) {
       setUseIndication(true);
+
       setValue('indicationCode', indication);
     }
   }, [indication]);

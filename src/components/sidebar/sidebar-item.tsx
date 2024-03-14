@@ -30,7 +30,7 @@ function Item({ item }: { item: ISidebarItem }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   const handleActive = () => {
     if (item.childrens) {

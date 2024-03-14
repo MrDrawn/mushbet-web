@@ -10,9 +10,11 @@ import { PiXBold } from 'react-icons/pi';
 
 export function Auth({
   initialTab,
+  indication,
   close,
 }: {
   initialTab: 'login' | 'register';
+  indication?: string;
   close: () => void;
 }) {
   const [selectedTab, setSelectedTab] = useState<'login' | 'register'>(initialTab);
@@ -87,7 +89,7 @@ export function Auth({
             {selectedTab === 'login' ? (
               <LoginForm close={close} />
             ) : (
-              <RegisterForm setSelectedTab={setSelectedTab} />
+              <RegisterForm indication={indication} setSelectedTab={setSelectedTab} />
             )}
           </div>
         </motion.div>
