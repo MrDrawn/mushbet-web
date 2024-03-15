@@ -2,7 +2,7 @@
 
 import { useUser } from '@src/contexts';
 import { apiClient } from '@src/services';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
@@ -89,7 +89,9 @@ export function Deposit({ close }: { close: () => void }) {
 
   return (
     <>
-      {openPix && <Pix pixKey={pixKey} close={() => setOpenPix(false)} />}
+      <AnimatePresence initial={false}>
+        {openPix && <Pix pixKey={pixKey} close={() => setOpenPix(false)} />}
+      </AnimatePresence>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
