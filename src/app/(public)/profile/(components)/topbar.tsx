@@ -13,7 +13,7 @@ export function Topbar() {
 
   const [statistic, setStatistic] = useState<{
     totalGains: number;
-    totalMonth: number;
+    monthGains: number;
     totalAffiliate: number;
   } | null>(null);
 
@@ -92,7 +92,7 @@ export function Topbar() {
               <h1 className="text-[20px] text-white font-medium">
                 {loading
                   ? '...'
-                  : statistic?.totalMonth.toLocaleString('pt-br', {
+                  : statistic?.monthGains.toLocaleString('pt-br', {
                       currency: 'BRL',
                       style: 'currency',
                     })}
