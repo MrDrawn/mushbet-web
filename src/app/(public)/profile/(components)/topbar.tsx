@@ -1,11 +1,40 @@
 'use client';
 
 import { useUser } from '@src/contexts';
+import { apiClient } from '@src/services';
+import { useEffect, useState } from 'react';
 
 import { PiMoney } from 'react-icons/pi';
 
 export function Topbar() {
+  const [loading, setLoading] = useState(true);
+
   const { user } = useUser();
+
+  const [statistic, setStatistic] = useState<{
+    totalGains: number;
+    totalMonth: number;
+    totalAffiliate: number;
+  } | null>(null);
+
+  async function getStatistics() {
+    setLoading(true);
+
+    await apiClient
+      .get(`/users/statistics`)
+      .then(response => {
+        setStatistic(response.data);
+
+        setLoading(false);
+      })
+      .catch(error => {
+        console.log(error.response.data);
+      });
+  }
+
+  useEffect(() => {
+    getStatistics();
+  }, []);
 
   return (
     <div className="grid grid-cols-1 2xl:grid-cols-2 gap-[40px]">
@@ -46,7 +75,14 @@ export function Topbar() {
               <PiMoney className="text-white" size={24} />
             </div>
             <div className="flex flex-col">
-              <h1 className="text-[20px] text-white font-medium">R$0.00</h1>
+              <h1 className="text-[20px] text-white font-medium">
+                {loading
+                  ? '...'
+                  : statistic?.totalGains.toLocaleString('pt-br', {
+                      currency: 'BRL',
+                      style: 'currency',
+                    })}
+              </h1>
               <p className="text-[14px] text-secondary-100">Total ganhos</p>
             </div>
           </div>
@@ -55,7 +91,14 @@ export function Topbar() {
               <PiMoney className="text-white" size={24} />
             </div>
             <div className="flex flex-col">
-              <h1 className="text-[20px] text-white font-medium">R$0.00</h1>
+              <h1 className="text-[20px] text-white font-medium">
+                {loading
+                  ? '...'
+                  : statistic?.totalMonth.toLocaleString('pt-br', {
+                      currency: 'BRL',
+                      style: 'currency',
+                    })}
+              </h1>
               <p className="text-[14px] text-secondary-100">Ganhos mensais</p>
             </div>
           </div>
@@ -64,7 +107,14 @@ export function Topbar() {
               <PiMoney className="text-white" size={24} />
             </div>
             <div className="flex flex-col">
-              <h1 className="text-[20px] text-white font-medium">R$0.00</h1>
+              <h1 className="text-[20px] text-white font-medium">
+                {loading
+                  ? '...'
+                  : statistic?.totalAffiliate.toLocaleString('pt-br', {
+                      currency: 'BRL',
+                      style: 'currency',
+                    })}
+              </h1>
               <p className="text-[14px] text-secondary-100">Ganhos afiliados</p>
             </div>
           </div>
