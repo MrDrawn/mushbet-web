@@ -133,11 +133,6 @@ export function Navbar() {
                 1.340 Jogando agora
               </div>
             </li>
-            <li className="block lg:hidden">
-              <button arial-label="Menu">
-                <PiList className="text-white" size={32} />
-              </button>
-            </li>
           </ul>
         )}
       </nav>

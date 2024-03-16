@@ -9,6 +9,7 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 import { motion } from 'framer-motion';
+
 import { PiCaretRight } from 'react-icons/pi';
 
 interface ISidebarItem {
@@ -18,15 +19,15 @@ interface ISidebarItem {
   childrens?: ISidebarItem[];
 }
 
-export function SidebarItem({ item }: { item: ISidebarItem }) {
+export function SidebarItem({ item, close }: { item: ISidebarItem; close?: () => void }) {
   return (
     <Suspense>
-      <Item item={item} />
+      <Item item={item} close={close} />
     </Suspense>
   );
 }
 
-function Item({ item }: { item: ISidebarItem }) {
+function Item({ item, close }: { item: ISidebarItem; close?: () => void }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -69,7 +70,14 @@ function Item({ item }: { item: ISidebarItem }) {
         {open && (
           <div className="px-3 pt-5 flex flex-col gap-2">
             {item.childrens.map((child, index) => (
-              <Link key={index} href={child.url ? child.url : '#'}>
+              <Link
+                key={index}
+                href={child.url ? child.url : '#'}
+                aria-label={child.name}
+                onClick={() => {
+                  if (close) close();
+                }}
+              >
                 <motion.div
                   className={`${
                     `${pathname}${searchParams.size > 0 ? `?${searchParams}` : ''}` ===
@@ -91,7 +99,13 @@ function Item({ item }: { item: ISidebarItem }) {
     );
   } else {
     return (
-      <Link href={item.url ? item.url : '#'}>
+      <Link
+        href={item.url ? item.url : '#'}
+        aria-label={item.name}
+        onClick={() => {
+          if (close) close();
+        }}
+      >
         <motion.div
           className={`${
             `${pathname}${searchParams.size > 0 ? `?${searchParams}` : ''}` === item.url

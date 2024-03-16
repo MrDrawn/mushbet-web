@@ -22,7 +22,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
       </header>
       <Wins isActiveOffer={isActiveOffer} />
       <Sidebar routes={routes} isActiveOffer={isActiveOffer} />
-      <NavbarMobileBottom />
+      <NavbarMobileBottom routes={routes} isActiveOffer={isActiveOffer} />
       <main
         className={`overflow-x-hidden ${
           isActiveOffer

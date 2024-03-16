@@ -5,14 +5,21 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { Affiliate, Auth, Deposit, Withdraw } from '.';
+import { Affiliate, Auth, Deposit, SidebarMobile, Withdraw } from '.';
 
 import { AnimatePresence } from 'framer-motion';
 
 import { PiHeadsetBold, PiLink, PiList, PiUser, PiWallet, PiX } from 'react-icons/pi';
 import { useUser } from '@src/contexts';
+import { IRoutes } from '@src/interfaces';
 
-export function NavbarMobileBottom() {
+export function NavbarMobileBottom({
+  routes,
+  isActiveOffer,
+}: {
+  routes: IRoutes[];
+  isActiveOffer: boolean;
+}) {
   const pathname = usePathname();
 
   const [open, setOpen] = useState(false);
@@ -28,15 +35,15 @@ export function NavbarMobileBottom() {
 
   return (
     <>
-      {/* <AnimatePresence initial={false}>
+      <AnimatePresence initial={false}>
         {open && (
-          <NavbarMobile
-            isActivePromotion={isActivePromotion}
+          <SidebarMobile
+            routes={routes}
+            isActiveOffer={isActiveOffer}
             close={() => setOpen(false)}
           />
         )}
       </AnimatePresence>
-   */}
       <AnimatePresence initial={false}>
         {affiliateOpen && <Affiliate close={() => setAffiliateOpen(false)} />}
       </AnimatePresence>

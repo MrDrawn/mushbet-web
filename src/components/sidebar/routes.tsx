@@ -1,10 +1,9 @@
 import { PiGameController, PiTicket, PiFire } from 'react-icons/pi';
 
-import { MdOutlineCasino, MdOutlineLeaderboard } from 'react-icons/md';
-
-import { PiHandCoinsFill } from 'react-icons/pi';
+import { MdOutlineCasino } from 'react-icons/md';
 
 import { HiOutlineMicrophone, HiOutlineUserGroup } from 'react-icons/hi';
+
 import { IRoutes } from '@src/interfaces';
 
 export const routes: IRoutes[] = [
