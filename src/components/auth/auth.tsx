@@ -35,7 +35,7 @@ export function Auth({
         <motion.div
           initial={{ y: -20 }}
           animate={{ y: 0 }}
-          className="z-49 bg-[linear-gradient(#212134,#15171B)] relative w-full lg:max-w-xl lg:h-fit h-full p-6 lg:rounded-[20px] lg:my-10"
+          className="z-49 bg-[linear-gradient(#212134,#15171B)] relative w-full lg:max-w-xl lg:h-fit h-[100vh] p-6 lg:rounded-[20px] lg:my-10"
           onClick={e => e.stopPropagation()}
         >
           <div className="flex flex-col gap-[30px] pt-[40px] pb-[20px]">
