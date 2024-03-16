@@ -22,7 +22,7 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
       </header>
       <Wins isActiveOffer={isActiveOffer} />
       <Sidebar routes={routesAdmin} isActiveOffer={isActiveOffer} />
-      <NavbarMobileBottom />
+      <NavbarMobileBottom routes={routesAdmin} isActiveOffer={isActiveOffer} />
       <main
         className={`overflow-x-hidden ${
           isActiveOffer
