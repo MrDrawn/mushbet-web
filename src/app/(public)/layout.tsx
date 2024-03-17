@@ -10,6 +10,7 @@ import { Toaster } from 'react-hot-toast';
 
 import { MainLayout } from '../layouts';
 import { AuthProvider } from '@src/contexts';
+import Script from 'next/script';
 
 const raleway = Raleway({ subsets: ['latin'] });
 
@@ -48,6 +49,7 @@ export default function RootLayout({
           type="image/<generated>"
           sizes="<generated>"
         />
+        <Script src="//code.tidio.co/p4kzmsqzqsbr8mqbzcljykxtodtxlhpn.js" async />
       </head>
       <body className={`${raleway.className} bg-dark-300 h-full relative`}>
         <AuthProvider>
