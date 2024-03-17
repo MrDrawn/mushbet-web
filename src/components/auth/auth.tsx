@@ -53,16 +53,6 @@ export function Auth({
             >
               <PiXBold size={24} />
             </button>
-            <div className="flex flex-col justify-center items-center pb-[20px] gap-[20px]">
-              <Image
-                src="/logo.png"
-                className="h-[30px] w-[220px]"
-                width={180}
-                height={180}
-                quality={100}
-                alt="MushBet"
-              />
-            </div>
             <div className="flex justify-center lg:justify-start items-center gap-[30px]">
               <button
                 className={`${
