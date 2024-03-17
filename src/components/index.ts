@@ -11,4 +11,5 @@ export * from './deposit';
 export * from './withdraw';
 export * from './pix';
 export * from './affiliate';
+export * from './disable-body-scroll';
 export * from './footer';

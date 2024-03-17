@@ -56,7 +56,7 @@ export function NavbarMobileBottom({
       <AnimatePresence initial={false}>
         {authOpen && <Auth initialTab={typeAuth} close={() => setAuthOpen(false)} />}
       </AnimatePresence>
-      <nav className="fixed lg:hidden bottom-0 left-0 right-0 w-full z-30 py-1 bg-dark-200 justify-center mt-16">
+      <nav className="fixed lg:hidden bottom-0 left-0 right-0 w-full z-10 py-1 bg-dark-200 justify-center mt-16">
         <div className="overflow-hidden">
           <ul className="flex justify-between flex-row">
             <li className="relative">

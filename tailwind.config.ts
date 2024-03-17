@@ -16,6 +16,7 @@ const config: Config = {
         'dark-300': 'rgb(23, 24, 40)',
         'dark-400': 'rgb(42, 42, 57)',
         'dark-500': 'rgb(27, 28, 46)',
+        'dark-700': 'rgb(37, 38, 58)',
       },
       textColor: {
         'primary-100': 'rgb(95, 215, 50)',
@@ -26,6 +27,7 @@ const config: Config = {
         'dark-300': 'rgb(23, 24, 40)',
         'dark-400': 'rgb(42, 42, 57)',
         'dark-500': 'rgb(27, 28, 46)',
+        'dark-700': 'rgb(37, 38, 58)',
       },
       borderColor: {
         'primary-100': 'rgb(95, 215, 50)',
@@ -34,6 +36,7 @@ const config: Config = {
         'dark-200': 'rgb(44, 44, 62)',
         'dark-300': 'rgb(23, 24, 40)',
         'dark-400': 'rgb(42, 42, 57)',
+        'dark-700': 'rgb(37, 38, 58)',
       },
       gradientColorStops: {
         'primary-100': 'rgb(95, 215, 50)',
@@ -44,6 +47,7 @@ const config: Config = {
         'dark-400': 'rgb(42, 42, 57)',
         'dark-500': 'rgb(27, 28, 46)',
         'dark-600': 'rgb(41, 41, 64)',
+        'dark-700': 'rgb(37, 38, 58)',
       },
       width: {
         content: 'max-content',

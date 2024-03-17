@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { LoginForm, RegisterForm } from '.';
 import Image from 'next/image';
@@ -21,21 +21,26 @@ export function Auth({
 
   const handleOverlayClick = () => {
     close();
+
+    document.body.style.overflow = 'auto';
   };
+
+  document.body.style.overflow = 'hidden';
 
   return (
     <motion.div
+      id="modal"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="z-48 fixed w-[100vw] h-[100vh] top-0 left-0 bg-[#25263A]/70"
+      className="z-48 fixed w-[100vw] h-[100vh] top-0 left-0 bg-[linear-gradient(#212134,#15171B)] lg:bg-gradient-to-t lg:to-dark-600/70 lg:from-dark-600/70"
       onClick={handleOverlayClick}
     >
       <div className="z-49 fixed top-0 left-0 flex items-center justify-center overflow-auto w-[100vw] h-[-webkit-fill-available]">
         <motion.div
           initial={{ y: -20 }}
           animate={{ y: 0 }}
-          className="z-49 bg-[linear-gradient(#212134,#15171B)] relative w-full lg:max-w-xl lg:h-fit h-[100vh] p-6 lg:rounded-[20px] lg:my-10"
+          className="z-49 lg:bg-[linear-gradient(#212134,#15171B)] relative w-full lg:max-w-xl lg:h-fit h-full p-6 lg:rounded-[20px] lg:my-10"
           onClick={e => e.stopPropagation()}
         >
           <div className="flex flex-col gap-[30px] pt-[40px] pb-[20px]">
@@ -54,11 +59,6 @@ export function Auth({
                 quality={100}
                 alt="MushBet"
               />
-              <h1 className="text-[18px] text-white font-bold">
-                {selectedTab === 'login'
-                  ? 'Faça login em sua conta'
-                  : 'Cadastre-se na MushBet'}
-              </h1>
             </div>
             <div className="flex justify-center lg:justify-start items-center gap-[30px]">
               <button
