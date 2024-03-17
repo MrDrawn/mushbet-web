@@ -83,7 +83,14 @@ export function Deposit({ close }: { close: () => void }) {
 
   const handleOverlayClick = () => {
     close();
+
+    document.body.style.overflow = 'auto';
+
+    document.body.classList.remove('overflow-y-hidden');
   };
+
+  document.body.classList.add('overflow-y-hidden');
+  document.body.style.overflow = 'hidden';
 
   if (!user) return;
 
@@ -93,10 +100,11 @@ export function Deposit({ close }: { close: () => void }) {
         {openPix && <Pix pixKey={pixKey} close={() => setOpenPix(false)} />}
       </AnimatePresence>
       <motion.div
+        id="modal"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="z-48 fixed w-[100vw] h-[100vh] top-0 left-0 bg-[#25263A]/70"
+        className="z-48 fixed w-[100vw] h-[100vh] top-0 left-0 bg-[linear-gradient(#212134,#15171B)] lg:bg-gradient-to-t lg:to-dark-600/70 lg:from-dark-600/70"
         onClick={handleOverlayClick}
       >
         <div className="z-49 fixed top-0 left-0 flex items-center justify-center overflow-auto w-[100vw] h-[-webkit-fill-available]">

@@ -46,7 +46,7 @@ export function NavbarUser({
           <br />
           <span className="text-[11px] lg:text-[13px] text-white">{username}</span>
         </div>
-        <motion.button animate={{ rotate: open ? 180 : 0 }}>
+        <motion.button className="hidden lg:block" animate={{ rotate: open ? 180 : 0 }}>
           <PiCaretDownBold className="text-white" size={18} />
         </motion.button>
       </button>

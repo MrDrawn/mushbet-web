@@ -72,7 +72,7 @@ export function Navbar() {
                 Depositar
               </button>
             </li>
-            <li className="bg-dark-200 px-6 lg:px-8 py-3 rounded-[6px] flex items-center gap-3">
+            <li className="bg-dark-200 px-4 lg:px-8 py-3 rounded-[6px] flex items-center gap-3">
               <PiWallet className="hidden lg:block text-white" size={20} />
               <p className="text-[12px] lg:text-[13px] text-white font-semibold">
                 {user.wallet.balance.toLocaleString('pt-BR', {
