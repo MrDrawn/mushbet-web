@@ -2,12 +2,35 @@
 
 import { useEffect, useState } from 'react';
 
-import { Win } from './';
+import { Win, WinLoading } from './';
+import { ITransaction } from '@src/interfaces';
+import { apiClient } from '@src/services';
 
 export function Wins({ isActiveOffer }: { isActiveOffer: boolean }) {
+  const [loading, setLoading] = useState(true);
+
+  const [transactions, setTransactions] = useState<ITransaction[]>([]);
+
   const [scrollPosition, setScrollPosition] = useState(0);
 
-  const coinCount = 20;
+  const coinCount = 25;
+
+  async function getWins() {
+    setLoading(true);
+
+    await apiClient
+      .get('/transactions/gains')
+      .then(response => {
+        setTransactions(response.data);
+
+        setLoading(false);
+      })
+      .catch(error => {});
+  }
+
+  useEffect(() => {
+    getWins();
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -15,7 +38,7 @@ export function Wins({ isActiveOffer }: { isActiveOffer: boolean }) {
     }, 2000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [transactions]);
 
   return (
     <div
@@ -34,11 +57,17 @@ export function Wins({ isActiveOffer }: { isActiveOffer: boolean }) {
               transform: `translateX(-${scrollPosition * 100}px)`,
             }}
           >
-            {Array(coinCount)
-              .fill('')
-              .map((_, index) => (
-                <Win key={index} />
-              ))}
+            {loading
+              ? Array(coinCount)
+                  .fill('')
+                  .map((_, index) => <WinLoading key={index} />)
+              : transactions.length > 0
+              ? transactions.map((transaction, index) => (
+                  <Win key={index} {...transaction} />
+                ))
+              : Array(coinCount)
+                  .fill('')
+                  .map((_, index) => <WinLoading key={index} />)}
           </div>
         </div>
       </div>
