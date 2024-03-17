@@ -37,7 +37,9 @@ export function Topbar() {
   }
 
   useEffect(() => {
-    getGames();
+    if (search.length > 3) {
+      getGames();
+    }
   }, [search]);
 
   return (
