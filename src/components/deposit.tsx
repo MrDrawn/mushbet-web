@@ -83,14 +83,7 @@ export function Deposit({ close }: { close: () => void }) {
 
   const handleOverlayClick = () => {
     close();
-
-    document.body.style.overflow = 'auto';
-
-    document.body.classList.remove('overflow-y-hidden');
   };
-
-  document.body.classList.add('overflow-y-hidden');
-  document.body.style.overflow = 'hidden';
 
   if (!user) return;
 
