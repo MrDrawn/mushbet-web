@@ -143,14 +143,13 @@ export function Withdraw({ close }: { close: () => void }) {
                 >
                   CPF
                 </label>
-                <ReactInputMask
+                <input
                   id="document"
                   type="text"
-                  className={`bg-[#242435] px-[15px] text-[14px] py-[10px] placeholder:text-[#45454D] text-secondary-100 rounded-[5px] outline-none ${
+                  placeholder="999.999.999-99"
+                  className={`w-full bg-[#242435] px-[15px] text-[14px] py-[10px] placeholder:text-[#45454D] text-secondary-100 rounded-[5px] outline-none ${
                     errors.document && 'outline-red-500'
                   }`}
-                  mask="999.999.999-99"
-                  placeholder="Seu CPF"
                   readOnly={loading}
                   {...register('document', { required: true })}
                 />
