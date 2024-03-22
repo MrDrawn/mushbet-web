@@ -131,7 +131,6 @@ export function Deposit({ close }: { close: () => void }) {
                     }`}
                     mask="999.999.999-99"
                     placeholder="Seu CPF"
-                    required
                     readOnly={loading}
                     {...register('document', { required: true })}
                   />
