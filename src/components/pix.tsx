@@ -16,14 +16,14 @@ export function Pix({ pixKey, close }: { pixKey: string; close: () => void }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="z-48 fixed w-[100vw] h-[100vh] top-0 left-0 bg-[#25263A]/70"
+      className="z-49 fixed w-[100vw] h-[100vh] top-0 left-0 bg-[#25263A]/70"
       onClick={handleOverlayClick}
     >
-      <div className="z-49 fixed top-0 left-0 flex items-center justify-center overflow-auto w-[100vw] h-[-webkit-fill-available]">
+      <div className="z-50 fixed top-0 left-0 flex items-center justify-center overflow-auto w-[100vw] h-[-webkit-fill-available]">
         <motion.div
           initial={{ y: -20 }}
           animate={{ y: 0 }}
-          className="z-49 bg-[linear-gradient(#212134,#15171B)] relative w-full lg:max-w-xl lg:h-fit h-full p-6 lg:rounded-[20px] lg:my-10"
+          className="z-50 bg-[linear-gradient(#212134,#15171B)] relative w-full lg:max-w-xl lg:h-fit h-full p-6 lg:rounded-[20px] lg:my-10"
           onClick={e => e.stopPropagation()}
         >
           <div className="flex flex-col gap-[30px] pt-[40px] pb-[20px]">
