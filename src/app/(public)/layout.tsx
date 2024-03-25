@@ -52,7 +52,8 @@ export default function RootLayout({
         <Script src="//code.tidio.co/p4kzmsqzqsbr8mqbzcljykxtodtxlhpn.js" async />
       </head>
       <body className={`${raleway.className} bg-dark-300 h-full relative`}>
-        <AuthProvider>
+        <div>{children}</div>
+        {/* <AuthProvider>
           <Toaster
             position="top-right"
             toastOptions={{
@@ -66,7 +67,7 @@ export default function RootLayout({
           <div className="lg:ml-[220px]">
             <Footer />
           </div>
-        </AuthProvider>
+          </AuthProvider>*/}
       </body>
     </html>
   );
