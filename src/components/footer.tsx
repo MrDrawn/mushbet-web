@@ -137,7 +137,7 @@ export function Footer() {
           <hr className="bg-[#74757C] opacity-[0.3] h-[1px] w-full mt-5 mb-5" />
           <div className="flex flex-col md:flex-row justify-between items-center gap-5 md:gap-0">
             <p className="text-[12px] lg:text-[14px] text-[#8D8DAC]">
-              Copyright © {new Date().getFullYear()} AlphaBet - Todos os direitos
+              Copyright © {new Date().getFullYear()} Mush Bet - Todos os direitos
               reservados.
             </p>
             <ul className="flex items-center gap-5">
