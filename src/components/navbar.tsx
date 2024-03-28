@@ -13,7 +13,7 @@ import { PiArrowsCounterClockwiseBold, PiWallet } from 'react-icons/pi';
 
 import { motion, AnimatePresence } from 'framer-motion';
 
-import { PiKeyBold, PiList, PiUserBold } from 'react-icons/pi';
+import { PiKeyBold, PiUserBold } from 'react-icons/pi';
 
 export function Navbar() {
   const [authModal, setAuthModal] = useState(false);
@@ -130,7 +130,7 @@ export function Navbar() {
             <li className="hidden lg:block">
               <div className="flex items-center gap-4 bg-dark-200 px-8 py-3 rounded-[6px] text-[14px] text-primary-100">
                 <div className="w-[20px] h-[20px] bg-primary-100 border-[5px] border-dark-200/60 rounded-full"></div>{' '}
-                1.340 Jogando agora
+                500+ Jogando agora
               </div>
             </li>
           </ul>

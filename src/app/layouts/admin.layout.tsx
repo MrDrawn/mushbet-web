@@ -30,7 +30,7 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
             : 'pt-[178px] md:pt-[198px] lg:ml-[250px]'
         }`}
       >
-        <div className="lg:px-[34px] lg:pt-[40px] pb-[40px] min-h-[100vh]">
+        <div className="lg:px-[34px] px-[20px] lg:pt-[40px] pb-[40px] min-h-[100vh]">
           {children}
         </div>
       </main>
