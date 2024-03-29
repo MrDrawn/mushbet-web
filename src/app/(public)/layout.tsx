@@ -4,7 +4,7 @@ import { Raleway } from 'next/font/google';
 
 import '../globals.css';
 
-import { Footer } from '@src/components';
+import { ChatLive, Footer } from '@src/components';
 
 import { Toaster } from 'react-hot-toast';
 
@@ -49,10 +49,10 @@ export default function RootLayout({
           type="image/<generated>"
           sizes="<generated>"
         />
-        <Script src="//code.tidio.co/p4kzmsqzqsbr8mqbzcljykxtodtxlhpn.js" async />
+        <ChatLive />
       </head>
       <body className={`${raleway.className} bg-dark-300 h-full relative`}>
-         <AuthProvider>
+        <AuthProvider>
           <Toaster
             position="top-right"
             toastOptions={{
@@ -66,7 +66,7 @@ export default function RootLayout({
           <div className="lg:ml-[220px]">
             <Footer />
           </div>
-          </AuthProvider>
+        </AuthProvider>
       </body>
     </html>
   );
