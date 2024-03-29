@@ -42,12 +42,8 @@ export function Banners({ userAgent }: { userAgent: string | null }) {
 
   const images = [
     {
-      src: 'https://imagedelivery.net/BgH9d8bzsn4n0yijn4h7IQ/4f5044d3-1f90-48bd-b5f4-c5d0d0f72800/w=2048',
+      src: 'https://cdn.mush.bet/teste-sua-sorte-roleta.png',
       link: '/casino/pg-soft/fortune-dragon',
-    },
-    {
-      src: 'https://imagedelivery.net/BgH9d8bzsn4n0yijn4h7IQ/9a665728-741e-4c34-9902-d9386781c200/w=1761',
-      link: '/casino/pg-soft/fortune-tiger',
     },
   ];
 
