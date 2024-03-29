@@ -104,7 +104,7 @@ export function NavbarMobileBottom({
                         ? 'text-primary-100'
                         : 'text-white/70 hover:text-primary-100'
                     } font-medium px-5 py-2.5`}
-                    href="https://tawk.to/chat/65a83e918d261e1b5f54935b/1hkcj8q41"
+                    href="https://tawk.to/chat/66064237a0c6737bd126202c/1hq475aju"
                     target="_blank"
                   >
                     <PiHeadsetBold size={18} /> Suporte
@@ -156,7 +156,7 @@ export function NavbarMobileBottom({
                         ? 'text-primary-100'
                         : 'text-white/70 hover:text-primary-100'
                     } font-medium px-5 py-2.5`}
-                    href="https://tawk.to/chat/65a83e918d261e1b5f54935b/1hkcj8q41"
+                    href="https://tawk.to/chat/66064237a0c6737bd126202c/1hq475aju"
                     target="_blank"
                   >
                     <PiHeadsetBold size={18} /> Suporte

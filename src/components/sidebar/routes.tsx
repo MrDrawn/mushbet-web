@@ -67,6 +67,6 @@ export const routes: IRoutes[] = [
   {
     icon: <HiOutlineMicrophone size={24} />,
     name: 'Suporte',
-    url: '/support',
+    url: 'https://tawk.to/chat/66064237a0c6737bd126202c/1hq475aju',
   },
 ];
