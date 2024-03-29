@@ -50,7 +50,7 @@ export function Affiliate({ close }: { close: () => void }) {
             <h1 className="text-[18px] text-center text-white font-bold">Afiliado</h1>
             <div className="flex flex-col justify-center text-center items-center">
               <h2 className="text-primary-100 mb-4">
-                Ganhe até R$15,00 BRL por convidado
+                Ganhe até R$50,00 BRL por convidado
               </h2>
               <h1 className="text-[20px] text-white font-semibold">
                 Convide amigos e ganhe dinheiro
@@ -70,13 +70,13 @@ export function Affiliate({ close }: { close: () => void }) {
                 type="text"
                 className={`pl-10 w-full bg-[#242435] px-[15px] text-[14px] py-[10px] placeholder:text-[#45454D] text-secondary-100 rounded-[5px] outline-none`}
                 placeholder="Código"
-                defaultValue={`https://www.mush.bet/affiliate/${code}`}
-                value={`https://www.mush.bet/affiliate/${code}`}
+                defaultValue={`https://www.mush.bet/r/${code}`}
+                value={`https://www.mush.bet/r/${code}`}
                 readOnly
               />
             </div>
             <CopyToClipboard
-              text={`https://www.mush.bet/affiliate/${code}`}
+              text={`https://www.mush.bet/r/${code}`}
               onCopy={() => toast.success('Código de afiliado copiado!')}
             >
               <button
