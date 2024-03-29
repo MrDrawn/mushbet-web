@@ -51,7 +51,7 @@ export default function Profile({
 
   return (
     <Container>
-      <div className="flex flex-col gap-[40px]">
+      <div className="flex flex-col gap-[40px] px-[20px] lg:px-0">
         <h1 className="flex items-center gap-3 text-white text-[20px] font-medium">
           <PiUserBold size={20} /> Perfil
         </h1>
