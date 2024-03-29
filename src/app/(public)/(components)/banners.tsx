@@ -45,6 +45,10 @@ export function Banners({ userAgent }: { userAgent: string | null }) {
       src: 'https://cdn.mush.bet/teste-sua-sorte-roleta.png',
       link: '/casino/pg-soft/fortune-dragon',
     },
+    {
+      src: 'https://cdn.mush.bet/festival-de-premios.png',
+      link: '/casino/pg-soft/fortune-dragon',
+    },
   ];
 
   const CustomDot = ({ onMove, index, onClick, active }: any) => {
