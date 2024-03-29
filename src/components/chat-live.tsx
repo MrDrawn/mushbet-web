@@ -10,6 +10,8 @@ export function ChatLive() {
   if (isTabletOrMobile) {
     return <></>;
   } else {
-    return <Script src="//code.tidio.co/p4kzmsqzqsbr8mqbzcljykxtodtxlhpn.js" async />;
+    return (
+      <Script src="https://embed.tawk.to/66064237a0c6737bd126202c/1hq475aju" async />
+    );
   }
 }
