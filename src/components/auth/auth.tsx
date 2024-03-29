@@ -2,10 +2,9 @@
 
 import { motion } from 'framer-motion';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { LoginForm, RegisterForm } from '.';
-import Image from 'next/image';
 import { PiXBold } from 'react-icons/pi';
 
 export function Auth({
@@ -21,14 +20,7 @@ export function Auth({
 
   const handleOverlayClick = () => {
     close();
-
-    document.body.style.overflow = 'auto';
-
-    document.body.classList.remove('overflow-y-hidden');
   };
-
-  document.body.classList.add('overflow-y-hidden');
-  document.body.style.overflow = 'hidden';
 
   return (
     <motion.div
