@@ -18,6 +18,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   minimumScale: 1,
   userScalable: false,
+  themeColor: '#5fd732',
 };
 
 export const metadata: Metadata = {
@@ -26,7 +27,6 @@ export const metadata: Metadata = {
     'Descubra a maior casa de apostas da América Latina. Junte-se ao MushBet e aproveite os jogos exclusivos como Fortune Tiger, Fortune Dragon e mais. Depósito mínimo de R$10 e saques rápidos a partir de R$20.',
   keywords:
     'mushbet, mush bet, apostas online, cassino online, jogo online, roleta, slots, blackjack, casino ao vivo, bônus de boas-vindas, afiliados mushbet, ganhos rápidos, apostas no Brasil',
-  themeColor: '#5fd732',
   robots: 'index, follow',
   twitter: {
     title: 'Aposte no Mush Bet | Jogos Exclusivos e Bônus Generosos',
