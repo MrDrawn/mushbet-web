@@ -26,7 +26,7 @@ export function Game({ game, onClick }: { game: IGame; onClick: () => void }) {
       </div>
       <div className="flex flex-col gap-[8px] p-[5px]">
         <div>
-          <h1 className="text-[12px] lg:text-[16px] text-white font-medium text-center">
+          <h1 className="text-[12px] lg:text-[11px] text-white font-semibold text-center">
             {name}
           </h1>
         </div>
@@ -36,19 +36,19 @@ export function Game({ game, onClick }: { game: IGame; onClick: () => void }) {
               {index < 4 ? (
                 <PiStarDuotone
                   className="h-3 w-4 lg:h-4 lg:w-5 text-[#FFC800]"
-                  size={20}
+                  size={16}
                 />
               ) : (
                 <PiStarDuotone
                   className="h-3 w-4 lg:h-4 lg:w-5 text-[#939FAE]"
-                  size={20}
+                  size={16}
                 />
               )}
             </div>
           ))}
         </div>
         <div className="w-fit flex justify-center items-center mx-auto bg-primary-100/10 text-primary-100/100 py-[5px] px-[10px] rounded-[5px]">
-          <p className="text-[12px] lg:text-[14px]">{plataform.name}</p>
+          <p className="text-[12px] lg:text-[12px]">{plataform.name}</p>
         </div>
       </div>
     </div>
