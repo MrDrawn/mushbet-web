@@ -22,14 +22,16 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: 'Mush Bet Apostas Online | MushBet | Fortune Tiger',
-  description: 'A maior casa de aposta da américa latina.',
+  description:
+    'Descubra a maior casa de apostas da América Latina. Junte-se ao MushBet e aproveite os jogos exclusivos como Fortune Tiger, Fortune Dragon e mais. Depósito mínimo de R$10 e saques rápidos a partir de R$20.',
   keywords:
-    'mushbet, mush bet, mush, bet, apostas online, aposta online, aposta, casino, cassino, fortune tiger, fortune dragon, fortune ox, pg soft, ganhe 10 reais, ganhe 20 reais, mushbet partners, mush bet partners, roleta, casino roleta',
+    'mushbet, mush bet, apostas online, cassino online, jogo online, roleta, slots, blackjack, casino ao vivo, bônus de boas-vindas, afiliados mushbet, ganhos rápidos, apostas no Brasil',
   themeColor: '#5fd732',
   robots: 'index, follow',
   twitter: {
-    title: 'Mush Bet Apostas Online | MushBet | Fortune Tiger',
-    description: 'A maior casa de aposta da américa latina.',
+    title: 'Aposte no Mush Bet | Jogos Exclusivos e Bônus Generosos',
+    description:
+      'Participe do MushBet e ganhe com nossos jogos exclusivos como Fortune Tiger. Apostas seguras com altos retornos.',
     images: [
       {
         url: 'https://www.mush.bet/logotipo.png',
@@ -37,12 +39,13 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: 'Mush Bet Apostas Online | MushBet | Fortune Tiger',
+    title: 'Mush Bet Apostas Online | Aposte e Ganhe com Segurança',
     type: 'website',
     countryName: 'Brasil',
     alternateLocale: 'pt_BR',
     locale: 'pt_BR',
-    description: 'A maior casa de aposta da américa latina.',
+    description:
+      'Entre na maior casa de apostas da América Latina. Desfrute de uma plataforma segura e dinâmica com jogos exclusivos como Fortune Tiger.',
     images: [
       {
         url: 'https://www.mush.bet/logotipo.png',
