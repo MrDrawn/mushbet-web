@@ -43,11 +43,15 @@ export function Banners({ userAgent }: { userAgent: string | null }) {
   const images = [
     {
       src: 'https://cdn.mush.bet/teste-sua-sorte-roleta.png',
-      link: '/casino/pg-soft/fortune-dragon',
+      link: '/casino/pg-soft/fortune-tiger',
     },
     {
       src: 'https://cdn.mush.bet/festival-de-premios.png',
       link: '/casino/pg-soft/fortune-dragon',
+    },
+    {
+      src: 'https://cdn.mush.bet/ganhe-iphone-15.png',
+      link: '/casino/pg-soft/fortune-ox',
     },
   ];
 
