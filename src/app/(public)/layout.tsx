@@ -10,7 +10,6 @@ import { Toaster } from 'react-hot-toast';
 
 import { MainLayout } from '../layouts';
 import { AuthProvider } from '@src/contexts';
-import Script from 'next/script';
 
 const raleway = Raleway({ subsets: ['latin'] });
 
@@ -22,8 +21,36 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Casa de aposta online | MushBet',
+  title: 'Mush Bet Apostas Online | MushBet | Fortune Tiger',
   description: 'A maior casa de aposta da américa latina.',
+  keywords:
+    'mushbet, mush bet, mush, bet, apostas online, aposta online, aposta, casino, cassino, fortune tiger, fortune dragon, fortune ox, pg soft, ganhe 10 reais, ganhe 20 reais, mushbet partners, mush bet partners, roleta, casino roleta',
+  themeColor: '#5fd732',
+  robots: 'index, follow',
+  twitter: {
+    title: 'Mush Bet Apostas Online | MushBet | Fortune Tiger',
+    description: 'A maior casa de aposta da américa latina.',
+    images: [
+      {
+        url: 'https://www.mush.bet/logotipo.png',
+      },
+    ],
+  },
+  openGraph: {
+    title: 'Mush Bet Apostas Online | MushBet | Fortune Tiger',
+    type: 'website',
+    countryName: 'Brasil',
+    alternateLocale: 'pt_BR',
+    locale: 'pt_BR',
+    description: 'A maior casa de aposta da américa latina.',
+    images: [
+      {
+        url: 'https://www.mush.bet/logotipo.png',
+      },
+    ],
+    siteName: 'MushBet',
+    url: 'https://www.mush.bet',
+  },
 };
 
 export default function RootLayout({
