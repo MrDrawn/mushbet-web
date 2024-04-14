@@ -13,3 +13,4 @@ export * from './pix';
 export * from './affiliate';
 export * from './chat-live';
 export * from './footer';
+export * from './facebook-pixel';

@@ -4,7 +4,7 @@ import { Raleway } from 'next/font/google';
 
 import '../globals.css';
 
-import { ChatLive, Footer } from '@src/components';
+import { ChatLive, FacebookPixel, Footer } from '@src/components';
 
 import { Toaster } from 'react-hot-toast';
 
@@ -80,6 +80,7 @@ export default function RootLayout({
           sizes="<generated>"
         />
         <ChatLive />
+        <FacebookPixel />
       </head>
       <body className={`${raleway.className} bg-dark-300 h-full relative`}>
         <AuthProvider>
